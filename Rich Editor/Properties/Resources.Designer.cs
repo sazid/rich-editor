@@ -123,6 +123,16 @@ namespace Rich_Editor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Redo_grey_16xMD {
+            get {
+                object obj = ResourceManager.GetObject("Redo_grey_16xMD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Save_grey_16x_24 {
             get {
                 object obj = ResourceManager.GetObject("Save_grey_16x_24", resourceCulture);
@@ -146,6 +156,26 @@ namespace Rich_Editor.Properties {
         internal static System.Drawing.Bitmap SaveAs_16x_32 {
             get {
                 object obj = ResourceManager.GetObject("SaveAs_16x_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Undo_grey_16x {
+            get {
+                object obj = ResourceManager.GetObject("Undo_grey_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Undo_grey_16xMD {
+            get {
+                object obj = ResourceManager.GetObject("Undo_grey_16xMD", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

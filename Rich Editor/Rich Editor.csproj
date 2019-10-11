@@ -135,5 +135,14 @@
   <ItemGroup>
     <None Include="Resources\Paste_16x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo_grey_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redo_grey_16xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo_grey_16xMD.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
