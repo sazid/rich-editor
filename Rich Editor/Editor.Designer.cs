@@ -54,12 +54,15 @@
             this.toolStripFontSize = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripHelp = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.usernameLabel = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripUsername = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripCut = new System.Windows.Forms.ToolStripButton();
             this.toolStripCopy = new System.Windows.Forms.ToolStripButton();
             this.toolStripPaste = new System.Windows.Forms.ToolStripButton();
+            this.richEditor = new System.Windows.Forms.RichTextBox();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripModeLabel = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripMode = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -105,6 +108,7 @@
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
@@ -113,6 +117,7 @@
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
@@ -120,6 +125,7 @@
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
@@ -195,8 +201,10 @@
             this.toolStripFontSize,
             this.toolStripHelp,
             this.toolStripSeparator2,
+            this.toolStripModeLabel,
+            this.toolStripMode,
             this.toolStripLabel1,
-            this.usernameLabel});
+            this.toolStripUsername});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -211,6 +219,7 @@
             this.toolStripNew.Name = "toolStripNew";
             this.toolStripNew.Size = new System.Drawing.Size(23, 22);
             this.toolStripNew.Text = "New File (Ctrl+N)";
+            this.toolStripNew.Click += new System.EventHandler(this.toolStripNew_Click);
             // 
             // toolStripOpen
             // 
@@ -220,6 +229,7 @@
             this.toolStripOpen.Name = "toolStripOpen";
             this.toolStripOpen.Size = new System.Drawing.Size(23, 22);
             this.toolStripOpen.Text = "Open File (Ctrl+O)";
+            this.toolStripOpen.Click += new System.EventHandler(this.toolStripOpen_Click);
             // 
             // toolStripSave
             // 
@@ -229,6 +239,7 @@
             this.toolStripSave.Name = "toolStripSave";
             this.toolStripSave.Size = new System.Drawing.Size(23, 22);
             this.toolStripSave.Text = "Save (Ctrl+S)";
+            this.toolStripSave.Click += new System.EventHandler(this.toolStripSave_Click);
             // 
             // toolStripSaveAs
             // 
@@ -238,6 +249,7 @@
             this.toolStripSaveAs.Name = "toolStripSaveAs";
             this.toolStripSaveAs.Size = new System.Drawing.Size(23, 22);
             this.toolStripSaveAs.Text = "Save As";
+            this.toolStripSaveAs.Click += new System.EventHandler(this.toolStripSaveAs_Click);
             // 
             // toolStripSeparator1
             // 
@@ -305,16 +317,11 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripLabel1
+            // toolStripUsername
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(63, 22);
-            this.toolStripLabel1.Text = "Username:";
-            // 
-            // usernameLabel
-            // 
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(0, 22);
+            this.toolStripUsername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toolStripUsername.Name = "toolStripUsername";
+            this.toolStripUsername.Size = new System.Drawing.Size(0, 22);
             // 
             // toolStrip2
             // 
@@ -328,7 +335,7 @@
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(24, 401);
             this.toolStrip2.TabIndex = 2;
-            this.toolStrip2.Text = "toolStrip2";
+            this.toolStrip2.Text = "s";
             // 
             // toolStripCut
             // 
@@ -357,11 +364,39 @@
             this.toolStripPaste.Size = new System.Drawing.Size(21, 20);
             this.toolStripPaste.Text = "Paste (Ctrl+V)";
             // 
+            // richEditor
+            // 
+            this.richEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richEditor.Location = new System.Drawing.Point(24, 49);
+            this.richEditor.Name = "richEditor";
+            this.richEditor.Size = new System.Drawing.Size(776, 401);
+            this.richEditor.TabIndex = 3;
+            this.richEditor.Text = "";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(63, 22);
+            this.toolStripLabel1.Text = "Username:";
+            // 
+            // toolStripModeLabel
+            // 
+            this.toolStripModeLabel.Name = "toolStripModeLabel";
+            this.toolStripModeLabel.Size = new System.Drawing.Size(41, 22);
+            this.toolStripModeLabel.Text = "Mode:";
+            // 
+            // toolStripMode
+            // 
+            this.toolStripMode.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toolStripMode.Name = "toolStripMode";
+            this.toolStripMode.Size = new System.Drawing.Size(0, 22);
+            // 
             // Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.richEditor);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -369,6 +404,7 @@
             this.Name = "Editor";
             this.Text = "Editor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Editor_FormClosed);
+            this.Load += new System.EventHandler(this.Editor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -407,11 +443,14 @@
         private System.Windows.Forms.ToolStripComboBox toolStripFontSize;
         private System.Windows.Forms.ToolStripButton toolStripHelp;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripLabel usernameLabel;
+        private System.Windows.Forms.ToolStripLabel toolStripUsername;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripCut;
         private System.Windows.Forms.ToolStripButton toolStripCopy;
         private System.Windows.Forms.ToolStripButton toolStripPaste;
+        private System.Windows.Forms.RichTextBox richEditor;
+        private System.Windows.Forms.ToolStripLabel toolStripModeLabel;
+        private System.Windows.Forms.ToolStripLabel toolStripMode;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }

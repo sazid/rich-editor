@@ -16,5 +16,10 @@ namespace Rich_Editor
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }
