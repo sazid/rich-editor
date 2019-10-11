@@ -59,8 +59,8 @@ namespace Rich_Editor
             {
                 if (user.Username == username && user.Password == password)
                 {
-                    MessageBox.Show("Login Success");
-                    //TODO: Take user to editor form
+                    new Editor().Show();
+                    Hide();
                     return;
                 }
             }

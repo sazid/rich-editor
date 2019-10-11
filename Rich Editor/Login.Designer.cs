@@ -113,6 +113,8 @@
             this.Controls.Add(this.passwordTb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.usernameTb);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Login";
             this.Text = "Login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);

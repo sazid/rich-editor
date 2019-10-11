@@ -195,6 +195,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(252, 434);
+            this.ControlBox = false;
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.label8);
@@ -211,6 +212,8 @@
             this.Controls.Add(this.passwordTb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.usernameTb);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "NewUser";
             this.Text = "New User";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewUser_FormClosed);
