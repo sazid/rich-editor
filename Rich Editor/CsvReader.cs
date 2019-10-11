@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Rich_Editor
 {
+    // Responsible for handling user loading/saving into csv information
     class CsvReader
     {
         public static List<User> ReadUsersFromCsv(string fileName)

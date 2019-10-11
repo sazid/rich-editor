@@ -8,7 +8,10 @@ namespace Rich_Editor
 {
     public partial class Editor : Form
     {
+        // Represents the path of the currently open file, if its null - the file is yet to be saved
         private string OPEN_FILE_PATH = null;
+
+        // Represents the currently logged in user
         private User user = null;
 
         public Editor(User user)
@@ -22,6 +25,7 @@ namespace Rich_Editor
             Application.Exit();
         }
 
+        // Check if user should be allowed to perform any edit operation
         private bool AllowEdit()
         {
             if (user.Type != UserType.ReadWrite)
@@ -42,6 +46,7 @@ namespace Rich_Editor
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
+                // Open .txt and .rtf files
                 openFileDialog.Filter = "txt files (*.txt)|*.txt|Rich Text Format files (*.rtf)|*.rtf";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
@@ -57,14 +62,12 @@ namespace Rich_Editor
 
         private string ShowSaveFileDialog()
         {
-            // Displays a SaveFileDialog so the user can save the Image
-            // assigned to Button2.
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "Rich Text Format (*.rtf)|*.rtf";
-            saveFileDialog1.Title = "Save a Rich Text Format Document";
-            saveFileDialog1.ShowDialog();
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "Rich Text Format (*.rtf)|*.rtf";
+            saveDialog.Title = "Save a Rich Text Format Document";
+            saveDialog.ShowDialog();
 
-            return saveFileDialog1.FileName;
+            return saveDialog.FileName;
         }
 
         private void SaveFile()
@@ -74,6 +77,7 @@ namespace Rich_Editor
             if (OPEN_FILE_PATH == null)
             {
                 string tempPath = ShowSaveFileDialog();
+                // If no file name is selected for saving, do not take any action
                 if (string.IsNullOrEmpty(tempPath)) return;
 
                 OPEN_FILE_PATH = tempPath;
