@@ -135,7 +135,7 @@
             // 
             this.dobPicker.Location = new System.Drawing.Point(12, 270);
             this.dobPicker.Name = "dobPicker";
-            this.dobPicker.Size = new System.Drawing.Size(200, 20);
+            this.dobPicker.Size = new System.Drawing.Size(229, 20);
             this.dobPicker.TabIndex = 15;
             // 
             // label7
@@ -156,13 +156,13 @@
             "ReadWrite"});
             this.userTypeCombo.Location = new System.Drawing.Point(12, 323);
             this.userTypeCombo.Name = "userTypeCombo";
-            this.userTypeCombo.Size = new System.Drawing.Size(121, 21);
+            this.userTypeCombo.Size = new System.Drawing.Size(229, 21);
             this.userTypeCombo.TabIndex = 17;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 307);
+            this.label8.Location = new System.Drawing.Point(9, 307);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 13);
             this.label8.TabIndex = 18;
@@ -181,10 +181,11 @@
             // 
             this.cancelBtn.Location = new System.Drawing.Point(11, 398);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(229, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(230, 23);
             this.cancelBtn.TabIndex = 20;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // NewUser
             // 
@@ -209,6 +210,7 @@
             this.Controls.Add(this.usernameTb);
             this.Name = "NewUser";
             this.Text = "New User";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewUser_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

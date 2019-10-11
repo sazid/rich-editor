@@ -16,5 +16,17 @@ namespace Rich_Editor
         {
             InitializeComponent();
         }
+
+        private void NewUser_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new Login().Show();
+            Hide();
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            Hide();
+        }
     }
 }

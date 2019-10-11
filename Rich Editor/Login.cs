@@ -13,6 +13,10 @@ namespace Rich_Editor
 {
     public partial class Login : Form
     {
+        public static string LOGIN_FILE = @"login.txt";
+
+        private List<User> users;
+
         public Login()
         {
             InitializeComponent();
@@ -22,21 +26,46 @@ namespace Rich_Editor
         {
             // Check if file exists, otherwise create one
             CheckFileExistance();
+            users = CsvReader.ReadUsersFromCsv(LOGIN_FILE);
         }
 
         private void CheckFileExistance()
         {
-            using (StreamWriter w = File.AppendText("login.txt")) ;
+            using (StreamWriter w = File.AppendText(LOGIN_FILE)) ;
         }
 
         private void newUserBtn_Click(object sender, EventArgs e)
         {
-            new NewUser().Show();
+            Hide();
+            new NewUser().ShowDialog();
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void loginBtn_Click(object sender, EventArgs e)
+        {
+            string username = usernameTb.Text;
+            string password = passwordTb.Text;
+
+            foreach (User user in users)
+            {
+                if (user.Username == username && user.Password == password)
+                {
+                    MessageBox.Show("Login Success");
+                    //TODO: Take user to editor form
+                    return;
+                }
+            }
+
+            MessageBox.Show("Invalid credentials");
         }
     }
 }
