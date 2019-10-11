@@ -77,6 +77,7 @@
             this.passwordTb.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.passwordTb.Location = new System.Drawing.Point(12, 73);
             this.passwordTb.Name = "passwordTb";
+            this.passwordTb.PasswordChar = '*';
             this.passwordTb.Size = new System.Drawing.Size(229, 20);
             this.passwordTb.TabIndex = 5;
             // 
@@ -94,6 +95,7 @@
             this.reenterPasswordTb.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.reenterPasswordTb.Location = new System.Drawing.Point(12, 120);
             this.reenterPasswordTb.Name = "reenterPasswordTb";
+            this.reenterPasswordTb.PasswordChar = '*';
             this.reenterPasswordTb.Size = new System.Drawing.Size(229, 20);
             this.reenterPasswordTb.TabIndex = 7;
             // 
@@ -176,6 +178,7 @@
             this.submitBtn.TabIndex = 19;
             this.submitBtn.Text = "Submit";
             this.submitBtn.UseVisualStyleBackColor = true;
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
             // cancelBtn
             // 
