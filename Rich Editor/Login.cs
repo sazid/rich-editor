@@ -59,7 +59,7 @@ namespace Rich_Editor
             {
                 if (user.Username == username && user.Password == password)
                 {
-                    new Editor().Show();
+                    new Editor(user).Show();
                     Hide();
                     return;
                 }

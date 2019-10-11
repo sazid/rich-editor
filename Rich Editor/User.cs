@@ -1,12 +1,12 @@
 ﻿namespace Rich_Editor
 {
-    enum UserType
+    public enum UserType
     {
         ReadOnly,
         ReadWrite
     }
 
-    class User
+    public class User
     {
         public string Username { get; set; }
         public string Password { get; set; }
