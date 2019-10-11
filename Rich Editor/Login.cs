@@ -28,5 +28,15 @@ namespace Rich_Editor
         {
             using (StreamWriter w = File.AppendText("login.txt")) ;
         }
+
+        private void newUserBtn_Click(object sender, EventArgs e)
+        {
+            new NewUser().Show();
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
