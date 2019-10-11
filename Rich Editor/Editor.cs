@@ -67,6 +67,21 @@ namespace Rich_Editor
 
         }
 
+        private void Bold()
+        {
+
+        }
+
+        private void Italic()
+        {
+
+        }
+
+        private void Underline()
+        {
+
+        }
+
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e) => new AboutForm().Show();
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e) => Logout();
