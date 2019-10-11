@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29403.142
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rich Editor", "Rich Editor\Rich Editor.csproj", "{C85D861E-AC42-4F33-B547-21C4F56518A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C85D861E-AC42-4F33-B547-21C4F56518A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C85D861E-AC42-4F33-B547-21C4F56518A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C85D861E-AC42-4F33-B547-21C4F56518A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C85D861E-AC42-4F33-B547-21C4F56518A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFA96F9C-E6DA-4FB6-BACE-42AC17C94F5F}
+	EndGlobalSection
+EndGlobal
